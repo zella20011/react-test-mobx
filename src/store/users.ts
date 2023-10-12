@@ -14,8 +14,13 @@ class Users {
     this.usersList = this.usersList.filter(user => user.id !== id)
   }
 
-  addUser(user: UserType) {
-    this.usersList.push(user)
+  addUser(name: string) {
+    const newUser = {
+      id: Math.random(),
+      name
+    }
+
+    this.usersList.push(newUser)
   }
 }
 
