@@ -1,26 +1,26 @@
-import {makeAutoObservable} from 'mobx'
+import { makeAutoObservable } from "mobx";
 
-import { userList } from './userList';
-import { UserType } from '../type';
+// store
+import { userList } from "./userList";
 
 class Users {
   usersList = userList;
 
   constructor() {
-    makeAutoObservable(this)
+    makeAutoObservable(this);
   }
 
   removeUser(id: number) {
-    this.usersList = this.usersList.filter(user => user.id !== id)
+    this.usersList = this.usersList.filter((user) => user.id !== id);
   }
 
   addUser(name: string) {
     const newUser = {
       id: Math.random(),
-      name
-    }
+      name,
+    };
 
-    this.usersList.push(newUser)
+    this.usersList.push(newUser);
   }
 }
 
