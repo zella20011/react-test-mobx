@@ -1,7 +1,13 @@
 import { FC, useState } from "react";
+import styled from "styled-components";
 
 //store
 import Users from "../../store/users";
+
+const Wrapper = styled.div`
+  margin-top: 20px;
+  border-top: 1px dashed #000;
+`;
 
 const AddUser: FC = () => {
   const [newUser, setNewUser] = useState<string>("");
@@ -13,7 +19,7 @@ const AddUser: FC = () => {
   };
 
   return (
-    <div>
+    <Wrapper>
       <h2>Add new user</h2>
       <div>
         <div>Enter new user name: </div>
@@ -23,7 +29,7 @@ const AddUser: FC = () => {
         />
         <button onClick={handlerAddNewUser}>Add new user</button>
       </div>
-    </div>
+    </Wrapper>
   );
 };
 
